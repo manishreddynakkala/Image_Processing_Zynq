@@ -1,0 +1,50 @@
+Unable to capture context for thread 11296 in process 13588, can not generate back trace
+Unable to capture context for thread 8600 in process 13588, can not generate back trace
+Unable to capture context for thread 13660 in process 13588, can not generate back trace
+Unable to capture context for thread 1368 in process 13588, can not generate back trace
+Unable to capture context for thread 1656 in process 13588, can not generate back trace
+Unable to capture context for thread 3292 in process 13588, can not generate back trace
+Exception at PC 0x00007FFE3E9DCF19
+Unable to capture context for thread 2056 in process 13588, can not generate back trace
+Unable to capture context for thread 3208 in process 13588, can not generate back trace
+Unable to capture context for thread 10364 in process 13588, can not generate back trace
+Unable to capture context for thread 9684 in process 13588, can not generate back trace
+Exception at PC 0x00007FFDFE40BB93
+Printing stacktrace...
+
+Unable to capture context for thread 2056 in process 13588, can not generate back trace
+Unable to capture context for thread 3208 in process 13588, can not generate back trace
+Unable to capture context for thread 10364 in process 13588, can not generate back trace
+Unable to capture context for thread 9684 in process 13588, can not generate back trace
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+[0]  [0x00007FFDFE40BB93]
+[1]  [0x00007FFDFE40BB93]
+[2]  [0x00007FFDFE40B4A1]
+[3]  [0x00007FFDFE40B3EF]
+[4]  [0x00007FFDFE3F19FE]
+[5]  [0x00007FFDFE3F0ED1]
+[6]  [0x00007FFDFE3F0D76]
+[7]  [0x00007FFDFE3979F6]
+[8]  [0x00007FFDFE387AFB]
+[9]  [0x00007FFDFE4AE90A]
+[10]  [0x00007FFDFE4C9F87]
+[11]  [0x00007FFDFE4CA05F]
+[12] (BaseThreadInitThunk+0x14) [0x00007FFE40D37614]
+[13] (RtlUserThreadStart+0x21) [0x00007FFE40F826B1]
+Done
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
+Exception at PC 0x00007FFE3E9DCF19
