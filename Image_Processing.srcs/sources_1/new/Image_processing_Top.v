@@ -75,17 +75,19 @@ Image_control IC (
     .convoluted_data_valid(convoluted_data_valid)   
     );
     
-OutputBuffer OB (
-      .s_aclk(axi_clk),                  // input wire s_aclk
-      .s_aresetn(axi_rst_n),            // input wire s_aresetn
-      .s_axis_tvalid(convoluted_data_valid),    // input wire s_axis_tvalid
-      .s_axis_tready(),    // output wire s_axis_tready
-      .s_axis_tdata(convoluted_data),      // input wire [7 : 0] s_axis_tdata
-      .m_axis_tvalid(o_data_valid),    // output wire m_axis_tvalid
-      .m_axis_tready(i_data_ready),    // input wire m_axis_tready
-      .m_axis_tdata(o_data),      // output wire [7 : 0] m_axis_tdata
-      .axis_prog_full(axis_prog_full)  // output wire axis_prog_full
-    );
-    
+
+fifo_generator_0 Output_Buffer (
+  .wr_rst_busy(),        // output wire wr_rst_busy
+  .rd_rst_busy(),        // output wire rd_rst_busy
+  .s_aclk(axi_clk),                  // input wire s_aclk
+  .s_aresetn(axi_rst_n),            // input wire s_aresetn
+  .s_axis_tvalid(convoluted_data_valid),    // input wire s_axis_tvalid
+  .s_axis_tready(),    // output wire s_axis_tready
+  .s_axis_tdata(convoluted_data),      // input wire [7 : 0] s_axis_tdata
+  .m_axis_tvalid(o_data_valid),    // output wire m_axis_tvalid
+  .m_axis_tready(i_data_ready),    // input wire m_axis_tready
+  .m_axis_tdata(o_data),      // output wire [7 : 0] m_axis_tdata
+  .axis_prog_full(axis_prog_full)  // output wire axis_prog_full
+);
         
 endmodule

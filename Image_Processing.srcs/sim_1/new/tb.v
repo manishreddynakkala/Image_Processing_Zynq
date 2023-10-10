@@ -19,8 +19,8 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//define  headersize 1080
-//define  imagesize 512*512    //Defined later on as integers. Caused problems during simulation.
+`define  headersize 1080
+`define  imagesize 512*512    //Defined later on as integers. Caused problems during simulation.
 
 module tb(
     );
@@ -34,12 +34,11 @@ wire intr;
 wire [7:0] out_data;
 wire out_data_valid;
 
-integer  headersize = 1080;
-integer  imagesize = 512*512;
+//integer  headersize = 1080;
+//integer  imagesize = 512*512;
 
 integer i;
 integer file, file1;
-//integer fileid;
 integer send_size;
 integer recieved_data;
  //Square wave with a time period of ten ns.
@@ -58,16 +57,15 @@ begin
     reset = 0;
 	send_size = 0;
     img_data_valid = 0;
-    //recieved_data = 0;
+    recieved_data = 0;
     #100;
     reset = 1;
     #100;
     
-    file = $fopen("lena_gray.bmp" , "rb");
-    //$fread(file , fileid); //Trying to read the file using it's id.
-    file1 = $fopen("blurred_lena.bmp" , "wb");
+    file = $fopen("blurred_lena.bmp" , "rb");
+    file1 = $fopen("blurred_lena_v2.bmp" , "wb");
     
-    for(i=0 ; i < headersize ; i = i +1)
+    for(i=0 ; i < `headersize ; i = i +1)
     begin
         $fscanf(file , "%c" , img_data);
         $fwrite(file1 , "%c" , img_data);
@@ -83,7 +81,7 @@ begin
     @(posedge clk);
     img_data_valid <= 1'b0;
     
-    while(send_size < imagesize)
+    while(send_size < `imagesize)
     begin
         @(posedge intr);
             for(i=0 ; i < 512 ; i = i+1)
@@ -122,13 +120,13 @@ end
 
 always@(posedge clk)
 begin
-    recieved_data = 0;
+    //recieved_data = 0;
     if(out_data_valid)
     begin
         $fwrite(file1 , "%c" , out_data);
-        recieved_data <= recieved_data + 1; //Edit has been made here... Giving a continuous assignment inside the loop.
+        recieved_data = recieved_data + 1;
     end
-    if(recieved_data == imagesize)
+    if(recieved_data == `imagesize)
     begin
         $fclose(file1);
         $stop;

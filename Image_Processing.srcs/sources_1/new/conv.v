@@ -42,12 +42,20 @@ reg sum_data_valid;
 reg mult_data_valid;
 
 //degfining the mask values-
+//Case 1-
+//Box Blur:
 initial
 begin
     for(i=0 ; i<9 ; i= i+1)
     begin
         kernel[i] = 1; //Definnig kernel for blur operation.
     end
+end
+
+//Case 2-
+//edge detection:
+initial
+begin
 end
 
 //Multiplying data with the kernel or mask.
@@ -80,7 +88,7 @@ end
 
 always@(posedge input_clk)
 begin
-    convoluted_data <= sum_data / 9;
+    convoluted_data <= sum_data / 9; //Normalized box blur value.
     convoluted_data_valid <= sum_data_valid; 
 end
 endmodule

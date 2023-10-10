@@ -53,7 +53,7 @@ wire [23:0] lb3data;
 localparam IDLE = 'b0;
 localparam RD_BUFFER = 'b1;
 
-assign ouput_pixel_data_valid = rd_line_buffer;
+assign output_pixel_data_valid = rd_line_buffer; //Had a typo...Need to check if this is the reason..
 
 
 always@(posedge input_clk)
